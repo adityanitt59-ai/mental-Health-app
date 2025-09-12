@@ -1,73 +1,200 @@
-# Welcome to your Lovable project
+# MindCare - Student Mental Health Support App
 
-## Project info
+A comprehensive, responsive web application designed to support student mental health. Built with React, TypeScript, Tailwind CSS, and includes mock backend APIs ready for Netlify deployment.
 
-**URL**: https://lovable.dev/projects/1e61c67c-07c6-44cc-8875-f49967229aa1
+## Features
 
-## How can I edit this code?
+### 🏠 **Home Page**
+- Welcoming hero section with calming design
+- Feature overview cards
+- Call-to-action buttons leading to key functionality
 
-There are several ways of editing your application.
+### 📊 **Mood Tracker**
+- Interactive mood selection (1-5 scale with visual icons)
+- Symptom tracking with common concerns
+- Personal notes and journaling
+- Progress insights and streak tracking
 
-**Use Lovable**
+### 📚 **Resources Library**
+- Curated mental health resources (articles, videos, audio)
+- Search and category filtering
+- Featured content highlighting
+- Evidence-based mental health information
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1e61c67c-07c6-44cc-8875-f49967229aa1) and start prompting.
+### 💬 **AI Support Chat**
+- Intelligent conversation system with crisis detection
+- Supportive responses for anxiety, depression, and general concerns
+- Emergency resource integration
+- Real-time typing indicators
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🚨 **Emergency Support**
+- 24/7 crisis hotline information
+- Campus resource directory
+- Warning signs awareness
+- Immediate coping strategies
 
-**Use your preferred IDE**
+## Technology Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend**: React 18 + TypeScript
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: shadcn/ui
+- **Routing**: React Router
+- **State Management**: React Query
+- **Build Tool**: Vite
+- **Deployment**: Netlify-ready with Functions
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Design System
 
-Follow these steps:
+The app uses a therapeutic color palette designed to promote calm and trust:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Primary**: Calming teal (#4DB6AC) for main actions
+- **Secondary**: Gentle green for growth and healing
+- **Accent**: Soft purple for creativity and support
+- **Background**: Warm, light gradients
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Key Design Principles
+- Accessibility-first approach
+- Smooth animations and transitions
+- Mobile-responsive design
+- Calming visual hierarchy
+- Crisis-aware UI patterns
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Mock Backend APIs
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+The app includes Netlify Functions for mock backend functionality:
+
+### `/api/mood-data`
+- **GET**: Retrieve mood tracking data and insights
+- **POST**: Submit new mood entries with symptoms and notes
+
+### `/api/resources`
+- **GET**: Fetch mental health resources with filtering
+
+### `/api/chat`
+- **POST**: Process chat messages with AI-like responses
+- **GET**: Retrieve conversation history
+
+## Local Development
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd mental-health-app
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:8080`
+
+## Deployment to Netlify
+
+### Automatic Deployment
+
+1. **Connect to GitHub**
+   - Push your code to a GitHub repository
+   - Connect your Netlify account to GitHub
+
+2. **Deploy Settings**
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+   - Node version: 18
+
+3. **Environment Variables**
+   No additional environment variables required for basic functionality.
+
+### Manual Deployment
+
+1. **Build the project**
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy to Netlify**
+   - Drag and drop the `dist` folder to Netlify
+   - Or use Netlify CLI: `netlify deploy --prod --dir=dist`
+
+## Project Structure
+
+```
+├── src/
+│   ├── assets/          # Images and static assets
+│   ├── components/      # Reusable UI components
+│   │   ├── ui/         # shadcn/ui components
+│   │   ├── Layout.tsx  # Main layout wrapper
+│   │   └── Navigation.tsx # Navigation component
+│   ├── pages/          # Page components
+│   │   ├── Home.tsx    # Landing page
+│   │   ├── MoodTracker.tsx
+│   │   ├── Resources.tsx
+│   │   ├── Chat.tsx
+│   │   └── Emergency.tsx
+│   ├── hooks/          # Custom React hooks
+│   ├── lib/            # Utility functions
+│   └── index.css       # Global styles and design system
+├── netlify/
+│   └── functions/      # Serverless functions for API
+├── netlify.toml        # Netlify configuration
+└── README.md
 ```
 
-**Edit a file directly in GitHub**
+## Customization
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Adding New Resources
+Edit the mock data in `netlify/functions/resources.js` to include new mental health resources.
 
-**Use GitHub Codespaces**
+### Modifying AI Responses
+Update the response logic in `netlify/functions/chat.js` to customize AI behavior and crisis detection.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Design System Changes
+Modify `src/index.css` and `tailwind.config.ts` to adjust colors, spacing, and visual design.
 
-## What technologies are used for this project?
+## Security & Privacy Considerations
 
-This project is built with:
+- No personal data is stored permanently in the current mock version
+- Crisis detection keywords trigger immediate emergency resource recommendations
+- All API endpoints include CORS headers for security
+- Ready for integration with secure authentication and database systems
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Future Enhancements
 
-## How can I deploy this project?
+The app architecture is designed to support:
 
-Simply open [Lovable](https://lovable.dev/projects/1e61c67c-07c6-44cc-8875-f49967229aa1) and click on Share -> Publish.
+- User authentication and personal accounts
+- Real database integration (Supabase, Firebase, etc.)
+- Actual AI/NLP services for chat functionality
+- Push notifications for mood tracking reminders
+- Integration with campus counseling services
+- Analytics and reporting for mental health trends
 
-## Can I connect a custom domain to my Lovable project?
+## Contributing
 
-Yes, you can!
+This project is structured to be easily extensible. Key areas for contribution:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. **Enhanced AI Responses**: Integrate with actual AI services
+2. **Data Persistence**: Add real database backend
+3. **Additional Resources**: Expand the mental health resource library
+4. **Accessibility**: Further improve accessibility features
+5. **Mobile App**: React Native version for mobile platforms
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## License
+
+This project is designed for educational and mental health support purposes. Please ensure compliance with healthcare regulations and privacy laws when deploying with real user data.
+
+## Support
+
+For technical questions about the codebase or deployment, please refer to the documentation or create an issue in the repository.
+
+**Important**: This application provides supportive resources but is not a replacement for professional mental health care. If you're experiencing a mental health crisis, please contact emergency services or a crisis hotline immediately.
+
+---
+
+Built with ❤️ for student mental health and well-being.
