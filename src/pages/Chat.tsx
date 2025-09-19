@@ -42,26 +42,6 @@ const Chat = () => {
       };
     }
 
-    // Anxiety responses
-    if (anxietyKeywords.some(keyword => lowerMessage.includes(keyword))) {
-      const responses = [
-        "It sounds like you're feeling anxious right now. That's completely understandable. Try taking a few deep breaths with me - breathe in for 4 counts, hold for 4, then out for 4. What's contributing to these anxious feelings?",
-        "Anxiety can be overwhelming, but you're not alone in this. One technique that helps many people is grounding - can you name 5 things you can see, 4 things you can touch, 3 things you can hear, 2 things you can smell, and 1 thing you can taste?",
-        "I hear that you're feeling anxious. That takes courage to share. Sometimes anxiety is our mind's way of trying to protect us. What specific thoughts or situations are triggering these feelings?"
-      ];
-      return { content: responses[Math.floor(Math.random() * responses.length)] };
-    }
-
-    // Sadness responses
-    if (sadnessKeywords.some(keyword => lowerMessage.includes(keyword))) {
-      const responses = [
-        "I'm sorry you're feeling this way. Your feelings are valid and it's okay to feel sad sometimes. Would you like to talk about what's been weighing on your mind lately?",
-        "It takes strength to recognize and express when you're struggling. Depression can make everything feel heavy, but small steps can help. Have you been able to do any activities that usually bring you even a little joy?",
-        "Thank you for trusting me with how you're feeling. Sadness is a natural human emotion, though I know it doesn't make it any less difficult. What kind of support would be most helpful for you right now?"
-      ];
-      return { content: responses[Math.floor(Math.random() * responses.length)] };
-    }
-
  
 
     return { content: generalResponses[Math.floor(Math.random() * generalResponses.length)] };
