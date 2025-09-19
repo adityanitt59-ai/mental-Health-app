@@ -62,14 +62,7 @@ const Chat = () => {
       return { content: responses[Math.floor(Math.random() * responses.length)] };
     }
 
-    // General supportive responses
-    const generalResponses = [
-      "Thank you for sharing that with me. I'm here to listen and support you. Can you tell me more about what you're experiencing?",
-      "It sounds like you're going through something difficult. Your feelings are completely valid. What would be most helpful to talk about right now?",
-      "I appreciate you opening up. Taking care of your mental health is so important. What brings you here today?",
-      "That sounds challenging to deal with. You're taking a positive step by reaching out for support. How long have you been feeling this way?",
-      "I'm glad you're here. Sometimes just having someone to talk to can make a difference. What's on your mind today?"
-    ];
+ 
 
     return { content: generalResponses[Math.floor(Math.random() * generalResponses.length)] };
   };
